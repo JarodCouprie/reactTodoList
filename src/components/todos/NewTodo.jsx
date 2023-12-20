@@ -1,6 +1,12 @@
 import { Input } from "../forms/Input.jsx";
 import { useState } from "react";
 
+/**
+ * Ajoute une nouvelle tâche à faire à notre liste de tâches
+ *
+ * @param {{label:string, completed: boolean, date: string, id: number}} addTodo
+ * @return {JSX.Element}
+ */
 export function NewTodo({ addTodo }) {
   const [value, setValue] = useState("");
 
@@ -12,10 +18,11 @@ export function NewTodo({ addTodo }) {
       date: new Date().toLocaleDateString("fr-FR"),
       id: id,
     };
-    addTodo(todo);
+    if (value !== "") {
+      addTodo(todo);
+    }
     setValue("");
   };
-
   const handleOnKeyUpNewTodo = (event) => {
     if (event.key === "Enter") {
       handleNewTodo();
@@ -37,7 +44,7 @@ export function NewTodo({ addTodo }) {
       />
       <button
         className={
-          "bg-blue-800 bg-opacity-70 hover:bg-blue-900 rounded p-4 h-14 w-14 gap-2"
+          "bg-gradient-to-r from-blue-600 to-blue-800 bg-opacity-70 hover:to-blue-900 rounded p-4 h-14 w-14 gap-2"
         }
         onClick={handleNewTodo}
       >

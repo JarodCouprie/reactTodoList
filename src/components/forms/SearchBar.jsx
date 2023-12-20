@@ -2,6 +2,17 @@ import { Input } from "./Input.jsx";
 import { Checkbox } from "./Checkbox.jsx";
 import { TodoCategoryRow } from "../todos/TodoCategoryRow.jsx";
 
+/**
+ * Barre de recherhe et filtres pour la liste des tâches à faire
+ *
+ * @param {string} search
+ * @param {(value: boolean) => void} onSearchChange
+ * @param {string} showTodayOnly
+ * @param {(value: boolean) => void} onTodayOnlyChange
+ * @param {string} showCompleted
+ * @param {(value: boolean) => void} onShowCompletedChange
+ * @return {JSX.Element}
+ */
 export function Searchbar({
   search,
   onSearchChange,

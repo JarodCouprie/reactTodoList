@@ -2,6 +2,15 @@ import { Checkbox } from "../forms/Checkbox.jsx";
 import { useState } from "react";
 import { Input } from "../forms/Input.jsx";
 
+/**
+ * Ligne individuelle d'une tâche à faire
+ *
+ * @param {{label:string, completed: boolean, date: string, id: number}} todo
+ * @param {string} deleteTodo
+ * @param {string} completeTodo
+ * @param {(string, string)} updateTodo
+ * @return {JSX.Element}
+ */
 export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
   const [completed, setCompleted] = useState(todo.completed);
   const [edit, setEdit] = useState(false);
@@ -25,6 +34,12 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
       setEdit(false);
     }
   };
+  let todayStyle = "";
+  let date = todo.date;
+  if (todo.date == new Date().toLocaleDateString("fr-FR")) {
+    date = "Aujourd'hui";
+    todayStyle = "bg-slate-900";
+  }
 
   return (
     <div
@@ -55,7 +70,11 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
           "flex pr-4 justify-end items-center gap-4 max-md:w-full max-md:p-4"
         }
       >
-        <p className={"max-lg:hidden"}>{todo.date}</p>
+        <p
+          className={`text-slate-950 max-lg:hidden text-sm bg-opacity-20 p-2 rounded-lg ${todayStyle}`}
+        >
+          {date}
+        </p>
         <button
           onClick={handleEdit}
           className={

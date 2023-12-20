@@ -1,17 +1,13 @@
 /**
+ * Champ de saisie pour plus d'intéractivité
+ *
  * @param {String} value
  * @param {String} onChange
  * @param {String} placeholder
  * @param {String} className
  * @param {String} onKeyUp
  */
-export function Input({
-  value,
-  onChange,
-  placeholder,
-  className,
-  onKeyUp = null,
-}) {
+export function Input({ value, onChange, placeholder, className, onKeyUp }) {
   return (
     <input
       type={"text"}

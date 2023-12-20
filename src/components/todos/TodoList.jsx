@@ -1,6 +1,15 @@
 import { TodoCategoryRow } from "./TodoCategoryRow.jsx";
 import { TodoRow } from "./TodoRow.jsx";
 
+/**
+ * Liste de toutes les tâches à faire
+ *
+ * @param {{label:string, completed: boolean, date: string, id: number}} todos
+ * @param {string} deleteTodo
+ * @param {string} completeTodo
+ * @param {(string, string) }updateTodo
+ * @return {JSX.Element}
+ */
 export function TodoList({ todos, deleteTodo, completeTodo, updateTodo }) {
   const rows = [];
 
@@ -27,7 +36,7 @@ export function TodoList({ todos, deleteTodo, completeTodo, updateTodo }) {
   return (
     <div
       className={
-        "w-1/2 flex flex-col gap-2 bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 rounded-lg p-4"
+        "w-1/2 flex flex-col bg-white backdrop-filter backdrop-blur-lg bg-opacity-30 rounded-lg p-4"
       }
     >
       <TodoCategoryRow name={"Tâches à faire"} />
