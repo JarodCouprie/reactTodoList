@@ -34,6 +34,7 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
       setEdit(false);
     }
   };
+
   let todayStyle = "";
   let date = todo.date;
   if (todo.date == new Date().toLocaleDateString("fr-FR")) {
@@ -77,12 +78,20 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
         </p>
         <button
           onClick={handleEdit}
-          className={
-            "hover:bg-slate-600 hover:border-none h-10 w-10 grid place-items-center rounded"
-          }
+          className={"hover:border h-10 w-10 grid place-items-center rounded"}
         >
-          {!edit && <img src={"./src/assets/icon/edit_icon.svg"} />}
-          {edit && <img src={"./src/assets/icon/close_icon.svg"} />}
+          {!edit && (
+            <img
+              src={"./src/assets/icon/edit_icon.svg"}
+              alt={"Icon de modification d'une tâche"}
+            />
+          )}
+          {edit && (
+            <img
+              src={"./src/assets/icon/close_icon.svg"}
+              alt={"Icon de modification d'une tâche"}
+            />
+          )}
         </button>
         <button
           onClick={handleDelete}
@@ -90,7 +99,10 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
             "bg-gradient-to-r from-rose-500 to-red-600 hover:to-red-800 h-10 w-10 grid place-items-center rounded"
           }
         >
-          <img src={"./src/assets/icon/delete_icon.svg"} />
+          <img
+            src={"./src/assets/icon/delete_icon.svg"}
+            alt={"Icon de suppression d'une tâche"}
+          />
         </button>
       </div>
     </div>

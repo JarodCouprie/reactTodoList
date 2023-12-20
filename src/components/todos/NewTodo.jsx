@@ -48,7 +48,10 @@ export function NewTodo({ addTodo }) {
         }
         onClick={handleNewTodo}
       >
-        <img src={"./src/assets/icon/add_icon.svg"} />
+        <img
+          src={"./src/assets/icon/add_icon.svg"}
+          alt={"Ajout d'une nouvelle tâche"}
+        />
       </button>
     </div>
   );

@@ -11,7 +11,7 @@ export function Checkbox({ checked, onChange, label, id, classNameLabel }) {
   return (
     <div
       className={
-        "flex items-center p-4 whitespace-nowrap overflow-hidden text-ellipsis"
+        "flex items-center whitespace-nowrap overflow-hidden text-ellipsis rounded hover:bg-white hover:bg-opacity-20 p-2 m-2"
       }
     >
       <input
