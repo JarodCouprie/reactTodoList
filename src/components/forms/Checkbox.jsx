@@ -4,14 +4,14 @@
  * @param {boolean} checked
  * @param {(value: boolean) => void} onChange
  * @param {string} label
- * @param {string} id
+ * @param {number || string} id
  * @param {string} classNameLabel
  */
 export function Checkbox({ checked, onChange, label, id, classNameLabel }) {
   return (
     <div
       className={
-        "flex items-center whitespace-nowrap overflow-hidden text-ellipsis rounded hover:bg-white hover:bg-opacity-20 p-2 m-2"
+        "flex items-center whitespace-nowrap overflow-hidden text-ellipsis rounded p-4"
       }
     >
       <input

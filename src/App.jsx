@@ -33,12 +33,22 @@ function App() {
     return true;
   });
 
+  /**
+   * Ajoute une nouvelle tâche
+   *
+   * @param {{label:string, completed: boolean, date: string, id: number}} todo
+   */
   const addTodo = (todo) => {
     const arrayTodos = [...todos];
     arrayTodos.unshift(todo);
     setTodos(arrayTodos);
   };
 
+  /**
+   * Supprime une tâche
+   *
+   * @param {string} todoId
+   */
   const deleteTodo = (todoId) => {
     const tempTodos = [...todos];
     const arrayIndex = tempTodos.findIndex((element) => element.id == todoId);
@@ -46,6 +56,11 @@ function App() {
     setTodos(tempTodos);
   };
 
+  /**
+   * Change une tâche de réalisée à non réalisée
+   *
+   * @param {string} todoId
+   */
   const completeTodo = (todoId) => {
     const tempTodos = [...todos];
     tempTodos.map((todo) => {
@@ -55,6 +70,13 @@ function App() {
     });
     setTodos(tempTodos);
   };
+
+  /**
+   * Modifie le texte d'une tâche
+   *
+   * @param {number}todoId
+   * @param {string} todoValue
+   */
   const updateTodo = (todoId, todoValue) => {
     const tempTodos = [...todos];
     tempTodos.map((todo) => {

@@ -4,7 +4,7 @@ import { useState } from "react";
 /**
  * Ajoute une nouvelle tâche à faire à notre liste de tâches
  *
- * @param {{label:string, completed: boolean, date: string, id: number}} addTodo
+ * @param {({label:string, completed: boolean, date: string, id: number}) => void} addTodo
  * @return {JSX.Element}
  */
 export function NewTodo({ addTodo }) {
@@ -23,6 +23,12 @@ export function NewTodo({ addTodo }) {
     }
     setValue("");
   };
+
+  /**
+   * Modifie la tâche dès lors que la touche Entrée est pressée
+   *
+   * @param event
+   */
   const handleOnKeyUpNewTodo = (event) => {
     if (event.key === "Enter") {
       handleNewTodo();

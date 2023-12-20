@@ -6,9 +6,9 @@ import { Input } from "../forms/Input.jsx";
  * Ligne individuelle d'une tâche à faire
  *
  * @param {{label:string, completed: boolean, date: string, id: number}} todo
- * @param {string} deleteTodo
- * @param {string} completeTodo
- * @param {(string, string)} updateTodo
+ * @param {(value: number) => void} deleteTodo
+ * @param {(value: number) => void} completeTodo
+ * @param {(value: number, value: string) => void} updateTodo
  * @return {JSX.Element}
  */
 export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
@@ -28,6 +28,11 @@ export function TodoRow({ todo, deleteTodo, completeTodo, updateTodo }) {
     setValue(todo.label);
   };
 
+  /**
+   * Modifie la tâche dès lors que la touche Entrée est pressée
+   *
+   * @param {event} event
+   */
   const handleKeyUp = (event) => {
     if (event.key === "Enter") {
       updateTodo(todo.id, value);

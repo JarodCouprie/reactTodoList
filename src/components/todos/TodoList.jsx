@@ -4,10 +4,10 @@ import { TodoRow } from "./TodoRow.jsx";
 /**
  * Liste de toutes les tâches à faire
  *
- * @param {{label:string, completed: boolean, date: string, id: number}} todos
- * @param {string} deleteTodo
- * @param {string} completeTodo
- * @param {(string, string) }updateTodo
+ * @param {[{label: string, completed: boolean, date: string, id: number}]} todos
+ * @param {(value: number) => void} deleteTodo
+ * @param {(value: number) => void} completeTodo
+ * @param {(value: number, value: string) => void } updateTodo
  * @return {JSX.Element}
  */
 export function TodoList({ todos, deleteTodo, completeTodo, updateTodo }) {

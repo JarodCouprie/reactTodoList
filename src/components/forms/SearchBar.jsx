@@ -6,10 +6,10 @@ import { TodoCategoryRow } from "../todos/TodoCategoryRow.jsx";
  * Barre de recherhe et filtres pour la liste des tâches à faire
  *
  * @param {string} search
- * @param {(value: boolean) => void} onSearchChange
- * @param {string} showTodayOnly
+ * @param {(value: string) => void} onSearchChange
+ * @param {boolean} showTodayOnly
  * @param {(value: boolean) => void} onTodayOnlyChange
- * @param {string} showCompleted
+ * @param {boolean} showCompleted
  * @param {(value: boolean) => void} onShowCompletedChange
  * @return {JSX.Element}
  */
@@ -21,6 +21,11 @@ export function Searchbar({
   showCompleted,
   onShowCompletedChange,
 }) {
+  /**
+   * Il n'y a rien à voir ici...
+   *
+   * @param {event} event
+   */
   const handleOnKeyUp = (event) => {
     if (event.key === "p") {
       console.log("Ça sent le p ici ! 💨");

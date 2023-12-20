@@ -2,10 +2,10 @@
  * Champ de saisie pour plus d'intéractivité
  *
  * @param {String} value
- * @param {String} onChange
+ * @param {(value: string) => void} onChange
  * @param {String} placeholder
  * @param {String} className
- * @param {String} onKeyUp
+ * @param {(value: event) => void} onKeyUp
  */
 export function Input({ value, onChange, placeholder, className, onKeyUp }) {
   return (
